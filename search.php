@@ -28,7 +28,7 @@ if (isset($_GET['type']) && isset($_GET['year'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ตรวจสอบคะแนนสอบ | โรงเรียนภูเขียว</title>
     <?php include 'helper/source/link.php' ?>
 </head>
 
