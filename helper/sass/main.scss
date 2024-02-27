@@ -1,0 +1,21 @@
+@import "font.scss";
+@import "value.scss";
+@import "home.scss";
+@import "footer.scss";
+@import "button.scss";
+@import "score.scss";
+
+body {
+    background: rgb(255, 243, 243);
+}
+
+
+.head-text {
+    color: $head-text;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.text {
+    color: $text;
+}
+

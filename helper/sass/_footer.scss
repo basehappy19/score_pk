@@ -1,0 +1,45 @@
+@import "value.scss";
+
+footer {
+    border-top: 2px solid $brand-color-bg;
+    box-shadow: 0px 0px 39px -20px $brand-effect-bg;
+    -webkit-box-shadow: 0px 0px 39px -20px $brand-effect-bg;
+    -moz-box-shadow: 0px 1px 39px -20px $brand-effect-bg;
+    background-color: $footer-color-bg;
+}
+
+.footer-logo {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.footer-address {
+    max-width: 250px; 
+}
+
+.development-team {
+    list-style: none; 
+    padding: 0; 
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: $link-color;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: $link-hover-color;
+}
+
+.footer-bottom {
+    background-color: $footer-credit-color-bg;
+    color: #fff;
+    padding: 10px;
+}

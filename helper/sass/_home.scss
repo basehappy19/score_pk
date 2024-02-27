@@ -1,0 +1,41 @@
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.des {
+    font-size: 15px;
+}
+
+.info {
+    font-size: 23px;
+}
+
+.content, .round, .form-search {
+    background-color: #fff;
+    padding: 20px; 
+    border: 1px solid rgba(0, 0, 0, 0.2); 
+    border-radius: 15px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.round, .form-search {
+    max-width: 625px; 
+    margin: 0 auto;
+}
+
+
+.form-search {
+    margin: auto;
+    margin: 150px auto;
+}
+main {
+    height: 50vh;
+}
+
+.total-point {
+    font-size: 36px;
+    font-weight: 700;
+    color: #f747d9;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
