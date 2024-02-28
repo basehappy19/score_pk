@@ -5,11 +5,11 @@ if (isset($_GET['cid'])) {
     $cid = $_GET['cid'];
     $code = $_GET['type'];
     $round_year = $_GET['round_year'];
-    $sql = "SELECT student.*, round.*, round_attr.label_attr, student_score.*, round_attr.max_score
-            FROM student
-            LEFT JOIN round ON student.round_code = round.code
-            LEFT JOIN round_attr ON student.round_code = round_attr.round_code
-            LEFT JOIN student_score ON student.id = student_score.student_id
+    $sql = "SELECT *
+            FROM student_score
+            LEFT JOIN student ON student_score.student_id = student.id
+            LEFT JOIN round ON student_score.round_code = round.code
+            LEFT JOIN round_attr ON student_score.round_attr_key = round_attr.round_code
             WHERE student.round_code = ? AND student.cid = ? AND student.round_year = ?";
 
     $stmt = mysqli_prepare($conn, $sql);
@@ -23,7 +23,9 @@ if (isset($_GET['cid'])) {
         $_SESSION['error'] = '<div class="alert alert-danger">คุณใส่รหัสบัตรประชาชนผิด โปรดลองใหม่</div>';
         header("Location: ./");
     }
-} 
+} else {
+    header("Location: ./");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +57,7 @@ if (isset($_GET['cid'])) {
                             </tr>
                             <?php while ($row = mysqli_fetch_assoc($result)) : ?>
                                 <tr>
-                                    <td><?php echo $row['label_attr'] ?></td>
+                                    <td><?php echo $row['round_attr_key'] ?></td>
                                     <td class="score"><span class="score-text"><?php echo $row['score'] ?></span><span class="max-score"> / <?php echo $row['max_score'] ?></span></td>
                                 </tr>
                             <?php endwhile; ?>

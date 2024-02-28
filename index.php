@@ -2,7 +2,7 @@
 include_once 'helper/server/db.php';
 session_start();
 
-$sql = "SELECT * FROM round";
+$sql = "SELECT * FROM round WHERE is_enabled = 1";
 $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_execute($stmt);
 $data = mysqli_stmt_get_result($stmt);
@@ -20,16 +20,16 @@ $data = mysqli_stmt_get_result($stmt);
 </head>
 
 <body>
-    <main>
 
+    <main>
         <section>
+            
             <div class="container my-5">
                 <div class="text-center mb-3">
                     <img src="helper/img/pklogo.png" alt="logo" width="150px">
                 </div>
                 <div>
                     <h3 class="text-center mb-3 head-text">ตรวจสอบคะแนนสอบ โรงเรียนภูเขียว</h3>
-
                         <?php
                         if (isset($_SESSION['error'])) {
                             echo $_SESSION['error']; 
@@ -48,6 +48,7 @@ $data = mysqli_stmt_get_result($stmt);
                     <?php endwhile; ?>
                 </div>
             </div>
+            
         </section>
         <?php include 'helper/source/footer.php' ?>
     </main>
