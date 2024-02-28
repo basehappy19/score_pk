@@ -15,7 +15,7 @@ a {
 .content, .round, .form-search {
   background-color: #fff;
   padding: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 3px solid #fcc6ff;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
 
@@ -121,6 +121,7 @@ table {
   background-color: #ffbddfbd; }
 
 .score-text {
+  font-size: 30px;
   color: #e23270;
   font-weight: 700; }
 
@@ -148,3 +149,10 @@ body {
 
 .text {
   color: #484848; }
+
+input[type="number"] {
+  height: 50px;
+  padding: 10px; }
+
+#right {
+  height: 50px; }
