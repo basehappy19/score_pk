@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 27, 2024 at 12:49 PM
+-- Generation Time: Feb 29, 2024 at 05:43 PM
 -- Server version: 8.2.0
 -- PHP Version: 8.2.13
 
@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS `round` (
   `code` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `year` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `is_enabled` tinyint(1) DEFAULT NULL,
+  `is_new` tinyint(1) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -45,9 +46,9 @@ CREATE TABLE IF NOT EXISTS `round` (
 -- Dumping data for table `round`
 --
 
-INSERT INTO `round` (`id`, `label`, `label_sec`, `des`, `code`, `year`, `is_enabled`, `created_at`, `updated_at`) VALUES
-(1, 'ห้องเรียนพิเศษ ม.4', 'ประเภทห้องเรียนพิเศษ ม.4', 'ตรวจสอบคะแนนสอบการรับนักเรียนห้องเรียนพิเศษ ม.4 ปีการศึกษา 2567', 'gifted4', '2567', 1, NULL, NULL),
-(3, 'ห้องเรียนพิเศษ ม.1', 'ประเภทห้องเรียนพิเศษ ม.4', 'ตรวจสอบคะแนนสอบการรับนักเรียนห้องเรียนพิเศษ ม.1 ปีการศึกษา 2567', 'gifted1', '2567', 1, NULL, NULL);
+INSERT INTO `round` (`id`, `label`, `label_sec`, `des`, `code`, `year`, `is_enabled`, `is_new`, `created_at`, `updated_at`) VALUES
+(1, 'ห้องเรียนพิเศษ ม.4', 'ประเภทห้องเรียนพิเศษ ม.4', 'ตรวจสอบคะแนนสอบการรับนักเรียนห้องเรียนพิเศษ ม.4 ปีการศึกษา 2567', 'gifted4', '2567', 1, 1, NULL, NULL),
+(3, 'ห้องเรียนพิเศษ ม.1', 'ประเภทห้องเรียนพิเศษ ม.4', 'ตรวจสอบคะแนนสอบการรับนักเรียนห้องเรียนพิเศษ ม.1 ปีการศึกษา 2567', 'gifted1', '2567', 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -97,14 +98,7 @@ CREATE TABLE IF NOT EXISTS `student` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `student`
---
-
-INSERT INTO `student` (`id`, `round_code`, `round_year`, `cid`, `fullname`, `from`, `reg_id`, `reg_type_label`, `note`, `created_at`, `updated_at`) VALUES
-(1, 'gifted4', 2567, 'test', 'pakpoom', 'ภูเขียว', '41005', 'SMT', NULL, NULL, NULL);
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -122,16 +116,7 @@ CREATE TABLE IF NOT EXISTS `student_score` (
   `created_at` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `student_score`
---
-
-INSERT INTO `student_score` (`id`, `student_id`, `round_code`, `round_attr_key`, `score`, `created_at`, `updated_at`) VALUES
-(1, 1, 'gifted4', 'eng', 50, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 1, 'gifted4', 'math', 75, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, 1, 'gifted4', 'sci', 11, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

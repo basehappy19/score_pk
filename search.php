@@ -37,20 +37,17 @@ if (isset($_GET['type']) && isset($_GET['year'])) {
         <section>
             <div class="container my-5">
                 <div class="form-search">
-                    <h3><?php echo $data['label_sec'] ?> ปีการศึกษา <?php echo $data['year'] ?></h3>
+                    <h4><?php echo $data['label_sec'] ?> ปีการศึกษา <?php echo $data['year'] ?></h4>
                     <hr>
-                    <form action="info" method="get">
+                    <form action="info.php" method="get">
                         <label for="cid" class="form-label">ระบุเลขบัตรประชาชน</label>
                         <div class="input-group">
-                            <input type="number" maxlength="13" name="cid" class="form-control" id="cid" placeholder="เลขบัตรประชาชน" required>
+                            <input type="text" name="cid" class="form-control" id="cid" placeholder="เลขบัตรประชาชน" required>
                             <input type="hidden" name="type" value="<?php echo $data['code'] ?>">
                             <input type="hidden" name="round_year" value="<?php echo $data['year'] ?>">
                             <div class="input-group-append">
-                                <span><button type="submit" id="right" class="btn btn-score">เช็คเลย <i class="fa-solid fa-id-card"></i></button></span>
+                                <span><button type="submit" id="left">เช็คเลย <i class="fa-solid fa-id-card"></i></button></span>
                             </div>
-                        </div>
-                        <div class="text-end mt-3">
-                            
                         </div>
                     </form>
                 </div>
