@@ -54,8 +54,7 @@ $data = mysqli_stmt_get_result($stmt);
                     <?php endwhile; ?>
                 </div>
                 <div class="mt-3 text-center animate__animated animate__zoomIn animate__fast">
-                    <a href="https://regis.phukhieo.ac.th" target="_blank" class="btn mx-3 btn-regis">ระบบรับสมัครนักเรียน <span><img src="helper/icon/register.png" alt="register" srcset=""></span></a>
-                    <a href="https://enroll.phukhieo.ac.th" target="_blank" class="btn btn-enroll">รายงานตัวและมอบตัว <span><img src="helper/icon/registered.png" alt="enroll"></span></a>
+                    <p class="mt-3">6 มีนาคม 2567 <a href="https://enroll.phukhieo.ac.th" target="_blank" class="btn btn-enroll">รายงานตัวและมอบตัว <span><img src="helper/icon/registered.png" alt="enroll"></span></a></p>
                 </div>
             </div>
 
