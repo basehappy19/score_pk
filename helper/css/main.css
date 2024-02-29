@@ -12,29 +12,46 @@ a {
 .info {
   font-size: 23px; }
 
+@media (max-width: 767px) {
+  .label-round {
+    margin-top: 40px; } }
+
 .content, .round, .form-search {
   background-color: #fff;
   padding: 20px;
-  border: 3px solid #fcc6ff;
+  border: 2px solid #ca67cf;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
 
-.round, .form-search {
+.round {
   max-width: 625px;
   margin: 0 auto; }
 
 .form-search {
+  max-width: 1000px; }
+
+.form-search {
   margin: auto;
   margin: 150px auto; }
-
-main {
-  height: 50vh; }
 
 .total-point {
   font-size: 36px;
   font-weight: 700;
   color: #f747d9;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+
+.round {
+  position: relative; }
+
+.new-round {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fc5a5a;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px; }
 
 footer {
   border-top: 2px solid #d63384b4;
@@ -77,18 +94,37 @@ footer {
 .btn {
   transition: transform 0.5s !important;
   color: #fff !important;
-  padding: 6px 20px;
-  border-radius: 5px;
-  transition: all 0.6s ease;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  border-radius: 50px;
   font-size: 16px;
   cursor: pointer;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   border: 1px solid #2f2f2f80; }
 
-.btn:hover {
-  transform: translateX(-5px);
-  color: #262626 !important;
+#left {
+  transition: transform 0.5s !important;
+  color: #fff !important;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  cursor: pointer;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border: 1px solid #2f2f2f80;
+  background-color: #4be1a5 !important; }
+
+#left:hover {
+  transform: scale(1.1);
   border: 0.5px solid #2f2f2f80;
+  color: #262626 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+
+.btn:hover {
+  transform: scale(1.1);
+  border: 0.5px solid #2f2f2f80;
+  color: #262626 !important;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
 
 .btn:active, .btn:focus {
@@ -100,13 +136,25 @@ footer {
 .btn-score:hover,
 .btn-score:active,
 .btn-score:focus {
-  background-color: #61e5b0; }
+  background-color: #4be1a5 !important; }
 
 .btn-back,
 .btn-back:hover,
 .btn-back:active,
 .btn-back:focus {
-  background-color: #ffa763; }
+  background-color: #ffa763 !important; }
+
+.btn-regis,
+.btn-regis:hover,
+.btn-regis:active,
+.btn-regis:focus {
+  background-color: #ed84df !important; }
+
+.btn-enroll,
+.btn-enroll:hover,
+.btn-enroll:active,
+.btn-enroll:focus {
+  background-color: #43da9d !important; }
 
 table {
   width: 100%;
@@ -129,7 +177,8 @@ table {
 
 .max-score {
   color: #fd3e81a1;
-  font-size: 19px; }
+  font-size: 18px;
+  font-weight: 500; }
 
 th, td {
   padding: 30px;
@@ -141,6 +190,68 @@ td {
 th {
   font-weight: 500;
   text-align: center; }
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0; }
+  50% {
+    transform: translateY(-500px) rotate(360deg);
+    opacity: 0;
+    border-radius: 50%; }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%; } }
+
+.background {
+  z-index: -1;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; }
+
+.background li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(228, 137, 227, 0.523);
+  animation: animate 20s linear infinite; }
+
+.background li:nth-child(0) {
+  left: 44%;
+  width: 99px;
+  height: 99px;
+  bottom: -99px;
+  animation-delay: 1s; }
+
+.background li:nth-child(1) {
+  left: 86%;
+  width: 59px;
+  height: 59px;
+  bottom: -59px;
+  animation-delay: 2s; }
+
+.background li:nth-child(2) {
+  left: 54%;
+  width: 87px;
+  height: 87px;
+  bottom: -87px;
+  animation-delay: 4s; }
+
+.background li:nth-child(3) {
+  left: 77%;
+  width: 100px;
+  height: 100px;
+  bottom: -100px;
+  animation-delay: 5s; }
 
 body {
   background: #fff3f3; }
@@ -156,5 +267,5 @@ input[type="number"] {
   height: 50px;
   padding: 10px; }
 
-#right {
+#left {
   height: 50px; }

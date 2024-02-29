@@ -4,12 +4,11 @@
 @import "footer.scss";
 @import "button.scss";
 @import "score.scss";
+@import "ani.scss";
 
 body {
-    background: rgb(255, 243, 243);
+    background: #fff3f3;  
 }
-
-
 
 .head-text {
     color: $head-text;
@@ -20,11 +19,13 @@ body {
     color: $text;
 }
 
+
+
 input[type="number"] {
     height: 50px;
     padding: 10px;
 }
-#right {
+#left {
     height: 50px;
 }
 
