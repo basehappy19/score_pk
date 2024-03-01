@@ -8,7 +8,7 @@ if (isset($_GET['cid'])) {
     $sql = "SELECT *
             FROM student_score
             LEFT JOIN student ON student_score.student_id = student.id  
-            LEFT JOIN round_attr ON student_score.round_attr_key = round_attr.`key`
+            LEFT JOIN round_attr ON student_score.round_attr_key = round_attr.key AND round_attr.round_code = student.round_code
             LEFT JOIN round ON round_attr.round_code = round.code
             WHERE student.round_code = ? AND student.cid = ? AND student.round_year = ?";
 

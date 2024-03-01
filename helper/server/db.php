@@ -1,11 +1,18 @@
 <?php
-$host = "localhost";
-$username = "root";
-$password = "";
-$dbname = "score";
+$host = "206.189.47.16";
+$username = "score";
+$password = "qwer";
+$dbname = "pk_score_made_by_stu";
 $port = 3306;
-$conn = mysqli_connect($host, $username, $password, $dbname, $port);
 
-if (!$conn) {
-    die("เชื่อมต่อกับ database ไม่ได้" . mysqli_connect_error());
+try {
+    $conn = mysqli_connect($host, $username, $password, $dbname, $port);
+    $conn->set_charset('utf8');
+    if (!$conn) {
+        die("เชื่อมต่อกับ database ไม่ได้" . mysqli_connect_error());
+    }
+} catch (\Throwable $th) {
+    //throw $th;
+    die('db fail');
+    // die($th->getMessage());
 }
