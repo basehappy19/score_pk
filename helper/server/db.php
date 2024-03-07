@@ -1,5 +1,5 @@
 <?php
-$host = "206.189.47.16";
+$host = "10.104.0.2";
 $username = "score";
 $password = "qwer";
 $dbname = "pk_score_made_by_stu";
