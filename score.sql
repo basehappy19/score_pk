@@ -31,7 +31,7 @@ DROP TABLE IF EXISTS `round`;
 CREATE TABLE IF NOT EXISTS `round` (
   `id` int NOT NULL AUTO_INCREMENT,
   `label` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `label_sec` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `label_sec` varchar(200) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `des` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `code` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `year` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `student` (
   `round_year` int DEFAULT NULL,
   `cid` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `fullname` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `from` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `from` varchar(200) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `reg_id` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `reg_type_label` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `note` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
