@@ -2,7 +2,7 @@
 include_once 'helper/server/db.php';
 session_start();
 
-$sql = "SELECT * FROM round WHERE is_enabled = 1";
+$sql = "SELECT * FROM round WHERE is_enabled = 1 ORDER BY is_new DESC, year DESC, code ASC";
 $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_execute($stmt);
 $data = mysqli_stmt_get_result($stmt);
